@@ -1,0 +1,54 @@
+8
+
+dir
+778
+https://mxunit.googlecode.com/svn/mxunit/trunk/framework/javaloader/lib
+https://mxunit.googlecode.com/svn
+
+
+
+2008-02-24T21:07:36.809943Z
+768
+virtix
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f92dd5c0-c831-0410-92f9-1b6876b37263
+
+classloader-src.zip
+file
+
+
+
+
+2008-02-25T14:28:48.806145Z
+422b73d0f1dca17fcd3d0b627e90db9a
+2008-02-24T21:07:36.809943Z
+768
+virtix
+has-props
+
+classloader-20070406174551.jar
+file
+
+
+
+
+2008-02-25T14:28:48.837395Z
+631b7941ce90e669793c27f577fb317f
+2008-02-24T21:07:36.809943Z
+768
+virtix
+has-props
+
