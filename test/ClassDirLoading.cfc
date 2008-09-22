@@ -2,7 +2,7 @@
   <cfscript>
   /*
   function testListOfJars(){
-    debug(getDir()); 
+    debug(getDir());   
   }
   
   function testLoadClasses(){
@@ -51,38 +51,69 @@
   
   
   function testLoadFFWebdriver(){
-    driver = loader.create("org.openqa.selenium.firefox.FirefoxDriver");
-     createObject("java","java.lang.System").setProperty("webdriver.firefox.bin", "C:\\Programs\\Mozilla Firefox\\firefox.exe");
-     createObject("java","java.lang.System").setProperty("webdriver.firefox.profile", "Webdriver");
+    driver = createObject("java","org.openqa.selenium.firefox.FirefoxDriver");
+    By = createObject("java","org.openqa.selenium.By");
+    // createObject("java","java.lang.System").setProperty("webdriver.firefox.bin", "C:\\Programs\\Mozilla Firefox\\firefox.exe");
+    // createObject("java","java.lang.System").setProperty("webdriver.firefox.profile", "Webdriver");
      //createObject("java","java.lang.System").setProperty("webdriver.firefox.useExisting", "true");
     //webdriver.firefox.profile ... profile name
     //webdriver.firefox.useExisting
     debug(driver);
+    
     //debug(createObject("java","java.lang.System"));
     //dump(driver);
-    driver.get("http://google.com");
+    driver.get("http://www.google.com/search?hl=en&q=mxunit&btnG=Google+Search&aq=f&oq=");
+    q = driver.findElement(By.name("q"));
+    debug(q);
+    debug(q.getText());
+    //q.sendKeys("mxunit");
+    //q.submit();   
+    }  
+  
+  
+
+  
+  
+  function testLoadHtmlUnitFromWebInf(){
+    wc = createObject("java","com.gargoylesoftware.htmlunit.WebClient").init();
+    wc.setJavaScriptEnabled(false);
+    dump(wc);
+    page = wc.getPage("http://mxunit.org/");
+    dump(page.getTitleText());
+    assertEquals("mxunit - unit test framework and eclipse plugin for adobe coldfusion",page.getTitleText());
   }  
   
   
-  function testLoadHtmlUnitWebdriver(){
-    driver = loader.create("org.openqa.selenium.htmlunit.HtmlUnitDriver");
+  function testLoadMozillaJSAgent(){
+   js = createObject("java","org.mozilla.javascript.Context");
+   debug(js);
+  }
+  
+  
+  function testLoadWebdriverFromWebInf(){
+    driver = createObject("java","org.openqa.selenium.htmlunit.HtmlUnitDriver");
     debug(driver);
-    driver.setJavascriptEnabled(false);
+    driver.setJavascriptEnabled(true);
     debug(driver.isJavascriptEnabled());
     //dump(driver);
     driver.get("http://google.com");
   }  
     
+  
+  
+  
+
+    
     
     function dumpServerClasses(){
-    	dump(loader);
+    //	dump(loader);
      //dump(server);
     }
     
     
   /* ------------------------------- */
   function setUp(){
-    loader = loadClasses();   
+   //loader = loadClasses();   
   }
   
   
@@ -100,10 +131,10 @@
      var loader = "";
      var i = 0;
      for(i=1; i lte dir.recordCount; i = i +1){
-       paths[i] = dir["directory"][i] & "\" & dir["name"][i];    
+       paths[i] = dir["directory"][i] & "/" & dir["name"][i];    
      }
      loader = createObject("component", "cfwebdriver.javaloader.JavaLoader").init(paths,true);
-     loader.initUseJavaProxyCfc();
+     //loader.initUseJavaProxyCfc();
      return loader;
     </cfscript>
   </cffunction>
