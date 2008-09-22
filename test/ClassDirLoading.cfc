@@ -62,8 +62,10 @@
     
     //debug(createObject("java","java.lang.System"));
     //dump(driver);
-    driver.get("http://www.google.com/search?hl=en&q=mxunit&btnG=Google+Search&aq=f&oq=");
+    driver.get("http://www.google.com/");
+    //driver.get("http://www.google.com/search?hl=en&q=mxunit&btnG=Google+Search&aq=f&oq=");
     q = driver.findElement(By.name("q"));
+    q.sendKeys("mxunit");
     debug(q);
     debug(q.getText());
     //q.sendKeys("mxunit");
@@ -92,11 +94,18 @@
   
   function testLoadWebdriverFromWebInf(){
     driver = createObject("java","org.openqa.selenium.htmlunit.HtmlUnitDriver");
+    by = createObject("java","org.openqa.selenium.By");
     debug(driver);
     driver.setJavascriptEnabled(true);
     debug(driver.isJavascriptEnabled());
     //dump(driver);
     driver.get("http://google.com");
+    debug("driver.getTitle() == " & driver.getTitle());
+    q = driver.findElement(By.name("q"));
+    debug(q);
+    debug(driver.getPageSource());
+    q.sendKeys("mxunit");
+    //q.sendKeys("mxunit");
   }  
     
   
