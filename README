@@ -1,0 +1,35 @@
+Experimental Webdriver Binding/port for ColdFusion
+
+Installation Version 1: 
+
+1. Put all the jars from /lib into WEB-INF/lib/webdriver
+2. Edit WEB-INF/web.xml adding the path to the webdriver jars above
+to the BEGINING of the cf.class.path element:  
+
+<context-param id="coldfusion_context_88">
+    <param-name>cf.class.path</param-name>
+    <param-value>
+     ./WEB-INF/lib/webdriver,./WEB-INF/cfusion/lib/updates,./WEB-INF/cfusion/lib,./WEB-INF/cfusion/gateway/lib,./WEB-INF/flex/jars,./WEB-INF/cfform/jars</param-value>
+</context-param>
+
+This is needed to make sure the commons logging classes are loaded first and
+override ColdFusion's logging.  NOTE: I don't know how this affects CF logging
+or other apps. It might be best to create a new CF instance for this kind of
+app or web testing ...
+
+3. Restart CF.
+4. Try the tests in ClassDirLoading.cfc
+
+To Do: Write CFC wrappers for Webdriver classes. Factor method maybe to return
+specified driver (FF,IE,HtmlUnit) ... Need to be able to swap out drivers quickly.
+    
+
+
+
+
+
+
+
+
+
+
