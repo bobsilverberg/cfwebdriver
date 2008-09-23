@@ -59,17 +59,17 @@
     //webdriver.firefox.profile ... profile name
     //webdriver.firefox.useExisting
     debug(driver);
-    
-    //debug(createObject("java","java.lang.System"));
-    //dump(driver);
     driver.get("http://www.google.com/");
-    //driver.get("http://www.google.com/search?hl=en&q=mxunit&btnG=Google+Search&aq=f&oq=");
     q = driver.findElement(By.name("q"));
-    q.sendKeys("mxunit");
+    keys = arrayNew(1);
+    keys[1] = "mxunit";
+    q.sendKeys(keys);
     debug(q);
-    debug(q.getText());
-    //q.sendKeys("mxunit");
-    //q.submit();   
+    q.submit();
+    q = driver.findElement(By.linkText("MXUnit Blog"));
+    q.click();
+    assertEquals("MXUnit Blog",driver.getTitle(),"title not ok");   
+    driver.close();
     }  
   
   
