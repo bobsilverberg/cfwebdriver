@@ -1,22 +1,57 @@
 <cfcomponent hint="Represents an element in a page" output="false">
+<cfscript>
+    this.webElement = "";
+    
+    function init(webElement){
+     this.webElement = arguments.webElement;
+    }
+    
+    
+    //TO DO: Accept int as 2nd param, which indicates mouse and keyboard events - KEYPRESS.KEYDOWN ...
+    function sendKeys(keys){
+	  var localKeys = arrayNew(1);
+	  localKeys[1] = keys;
+	  this.webElement.sendKeys(localKeys);
+	} 
+    
+    function submit() {
+      this.webElement.submit();
+    }  
+    
+    function getText() {
+      this.webElement.getText();
+    } //}java.lang.String 
+    
+    function clear() {
+      this.webElement.clear();
+    } //}void 
+	
+	
+	function click() {
+	    this.webElement.click();
+	} //}void 
+	
+	
+	function dragAndDropBy(x,y){} //}(int, int) void 
+	function dragAndDropOn(renderedElement){} //}(org.openqa.selenium.RenderedWebElement) void 
+	function findElement(by){} //}(org.openqa.selenium.By) org.openqa.selenium.WebElement 
+	function findElements(by){} //}(org.openqa.selenium.By) java.util.List 
+	function getAttribute(name){} //}(java.lang.String) java.lang.String 
+	function getChildrenOfType(strElement){} //}(java.lang.String) java.util.List 
+	function getLocation() {} //}ava.awt.Point 
+	function getSize() {} //}java.awt.Dimension 
+	
+	function getValue() {} //}java.lang.String 
+	function getValueOfCssProperty(css){} //}(java.lang.String) java.lang.String 
+	function isDisplayed() {} //}boolean 
+	function isEnabled() {} //}boolean 
+	function isSelected() {} //}boolean 
+	function setSelected() {} //}void 
+	
+	function toggle() {} //boolean 
+  
 
-
-	<cffunction name="click" access="public" output="false" returntype="Any">
-		<!--- TODO: Implement Method --->
-		<cfreturn />
-	</cffunction>
-
-<cffunction name="clear" access="public" output="false" returntype="Any">
-		<!--- TODO: Implement Method --->
-		<cfreturn />
-	</cffunction>
-
-
-	<cffunction name="sendKeys" access="package" output="false" returntype="Any">
-		<cfargument name="keys" type="Array" hint="array of strings" required="false" />
-		<cfargument name="keyStroke" type="Numeric" hint="KEY.up,MOUSE.click ... or similar" required="false" />
-		
-    <!--- TODO: Implement Method --->
-		<cfreturn />
-	</cffunction>
+</cfscript>
 </cfcomponent>
+
+
