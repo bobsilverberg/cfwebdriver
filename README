@@ -4,7 +4,7 @@ Experimental Webdriver Binding/port for ColdFusion
 
 
 --------------------------------------------------------------------------------
-Reccommendations before starting: 
+Recommendations before starting: 
 
 This setup is intended for individual developer use and not for a shared environment. 
 For the Firefox driver, Webdriver needs access to the APPDATA environment variable. 
@@ -75,13 +75,23 @@ Installation Version 2 Railo 3.00.003:
 
 --------------------------------------------------------------------------------
 
+Tips:
+If you don't want to use the ColdFusion components, all the more power to you!
+Just instantiate the java objects and call their methods. In addition to the
+Webdriver classes, the full HtmlUnit api is available for your testing 
+pleasure.
+
+--------------------------------------------------------------------------------
 General Tests: The FF driver works well. Remember, CF should be running under 
 your account so it can find Firefox. The HtmlUnit driver is fast, but does
 not support javascript well. 
 
 --------------------------------------------------------------------------------
 
-Known Issues: Internet Explorer fails to load for unknown reasons. 
+Known Issues: Internet Explorer fails to load for unknown reasons. Http authentication
+not implemented. So, not BASIC or NTLM yet. 
+
+
 
 
 
