@@ -1,6 +1,48 @@
+Last Updated: Friday, 09-26-2008
+
 Experimental Webdriver Binding/port for ColdFusion
 
-Installation Version 1: 
+
+--------------------------------------------------------------------------------
+Reccommendations before starting: 
+
+This setup is intended for individual developer use and not for a shared environment. 
+For the Firefox driver, Webdriver needs access to the APPDATA environment variable. 
+If the server is started under a local system account, this may not exist, and return 
+NULL. In this case, Firefox and likely IE will not run. The HtmlUnit
+driver still runs in this case. So, it's recommended that the developer
+be the account that started the cf server.
+
+
+Review the docs at http://code.google.com/p/webdriver for general information.
+
+
+Basic Process: Copy Webdriver jars to the CF class path, edit any required
+configuration file (not required with Railo), and restart the CF server.
+Copy the cfwebdriver components somewhere into the webroot and then have
+at it.
+
+It is also assumed that you have downloaded, installed, and are familiar with
+MXUnit.
+
+
+Installation Notes: The main task with getting up and running is at the server level. 
+The Webdriver jars needs to be loaded into the CFML server class path. This is 
+typically done by placing the jars in a directory that loads all jars when 
+the server starts. You may need to specify this in some class path setting
+such as in WEB-INF/web.xml or in runtime/bin/jvm.config file. 
+
+Determining where this is depends upon the server type your are running. 
+If you are running Adobe CF8 Multi-Instance, you should be able to modify the 
+web.xml file to load the directory of jars. In a single server instance, you
+might need to edit the jvm.config file. In either case, it may be required 
+to make sure the Webdriver jars are loaded first, in order to avoid conflicts,
+such as commons-logging conflicts.
+
+
+
+--------------------------------------------------------------------------------
+Installation Version 1 Adobe ColdFusion: 
 
 1. Put all the jars from /lib into WEB-INF/lib/webdriver
 2. Edit WEB-INF/web.xml adding the path to the webdriver jars above
@@ -20,10 +62,26 @@ app or web testing ...
 3. Restart CF.
 4. Try the tests in ClassDirLoading.cfc
 
-To Do: Write CFC wrappers for Webdriver classes. Factor method maybe to return
-specified driver (FF,IE,HtmlUnit) ... Need to be able to swap out drivers quickly.
-    
 
+
+--------------------------------------------------------------------------------
+
+Installation Version 2 Railo 3.00.003: 
+
+1. Put all the jars from /lib into {railo_install}/lib
+2. Restart Railo
+4. Try the tests in ClassDirLoading.cfc
+
+
+--------------------------------------------------------------------------------
+
+General Tests: The FF driver works well. Remember, CF should be running under 
+your account so it can find Firefox. The HtmlUnit driver is fast, but does
+not support javascript well. 
+
+--------------------------------------------------------------------------------
+
+Known Issues: Internet Explorer fails to load for unknown reasons. 
 
 
 

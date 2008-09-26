@@ -73,16 +73,30 @@
   
   
   function testGetPageSource() {
-    assertTrue(len(driver.getPageSource()) > 100 );
+    //assertTrue(len(driver.getPageSource()) > 100 );
   }
+  
+  function testIsJavascriptEnabled(){
+    assertFalse(driver.isJavascriptEnabled());
+  } 
+  
+  
+   function testSetJavascriptEnabled(){
+    driver.setJavascriptEnabled(true);
+    assertTrue(driver.isJavascriptEnabled());
+   } 
+  
+  
+  function testFindElementsById() {
+  	//debug( driver.findElementsById("gbar") );
+  } 
+  
   
   //To Dos ...........................
   function testFindElements(){
   	fail("to do");
     } 
-  function testFindElementsById() {
-  	fail("to do");
-  } 
+  
   
   function testFindElementsByName() {
   	fail("to do");
@@ -97,9 +111,7 @@
   function testGetVisible() {
     fail("to do");
   }
-  function testIsJavascriptEnabled(){
-    fail("to do");
-  } 
+  
   function testManage(){
     fail("to do");
   } 
@@ -109,9 +121,7 @@
   function testQuit() {
     fail("to do");
   }  
-  function testSetJavascriptEnabled(){
-    fail("to do");
-  } 
+ 
   function testSetProxy(){
     fail("to do");
   } 

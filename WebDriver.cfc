@@ -91,8 +91,24 @@
 		}  //)(java.lang.String) java.util.List 
 		
 		
+	    function isJavascriptEnabled(){
+	      return this.driver.isJavascriptEnabled();
+	    } // boolean 
+		
+		
+		function setJavascriptEnabled(enable){
+		  this.driver.setJavascriptEnabled(enable);
+		} //void 
+		
+		
+		function findElementsById(id) {
+		  return this.driver.findElementsById(id);
+		}  //)(java.lang.String) java.util.List 
+		
+		
+		//To Do's ......................
 		function findElements(by){} // org.openqa.selenium.By :: org.openqa.selenium.WebElement 
-		function findElementsById(id) {}  //)(java.lang.String) java.util.List 
+		
 		
 		function findElementsByName(name) {}  //)(java.lang.String) java.util.List 
 		function findElementsByXPath(xpath) {} //)(java.lang.String) java.util.List 
@@ -101,11 +117,11 @@
 		
 		
 		function getVisible() {} //boolean 
-		function isJavascriptEnabled(){} // boolean 
+	
 		function manage(){} //org.openqa.selenium.WebDriver$Options 
 		function navigate(){} //org.openqa.selenium.WebDriver$Navigation 
 		function quit() {}  //void 
-		function setJavascriptEnabled(enable){} //void 
+		
 		function setProxy(proxyUrl, port){} //void 
 		function setVisible(visible){} //void 
 		function switchTo(){} //org.openqa.selenium.WebDriver$TargetLocator 
