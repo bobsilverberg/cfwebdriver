@@ -23,7 +23,7 @@ Copy the cfwebdriver components somewhere into the webroot and then have
 at it.
 
 It is also assumed that you have downloaded, installed, and are familiar with
-MXUnit.
+MXUnit - http://mxunit.org
 
 
 Installation Notes: The main task with getting up and running is at the server level. 
@@ -88,8 +88,13 @@ not support javascript well.
 
 --------------------------------------------------------------------------------
 
-Known Issues: Internet Explorer fails to load for unknown reasons. Http authentication
-not implemented. So, not BASIC or NTLM yet. 
+Known Issues: Internet Explorer fails to load for unknown reasons. Methinks it
+might have something to do with how IE shuts down after an exception. It may
+still be running in the background.
+
+FF also does not load "sometimes" ... Http authentication is not implemented. 
+So, not BASIC or NTLM yet. Maybe extend the drivers or contribute to Webdriver
+the desired authenticateAs(...)
 
 
 

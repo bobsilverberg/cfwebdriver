@@ -1,28 +1,18 @@
 <cfcomponent  extends="mxunit.framework.TestCase">
   <cfscript>
-  /*
-  function testListOfJars(){
-    debug(getDir());   
-  }
-  
-  function testLoadClasses(){
-    var loader = loadClasses();   
-  }  
-    
-  */
   
    //Naturally only works on win
   function testLoadIEWebdriver(){
-   by = createObject("java","org.openqa.selenium.By");
-   driver = loader.create("org.openqa.selenium.ie.InternetExplorerDriver");
-   query = createObject("java","org.openqa.selenium.ie.InternetExplorerElement");
-   debug(query);
-    //driver.get("http://google.com");
-   // query = driver.findElement(by.name("q"));
-   // keys = arrayNew(1);
-   // keys[1] = "unit test";   
-   // query.sendKeys( keys );
-   // query.submit();
+    by = createObject("java","org.openqa.selenium.By");
+    driver = createObject("java","org.openqa.selenium.ie.InternetExplorerDriver");
+    query = createObject("java","org.openqa.selenium.ie.InternetExplorerElement");
+    debug(query);
+    driver.get("http://google.com");
+    query = driver.findElement(by.name("q"));
+    keys = arrayNew(1);
+    keys[1] = "unit test";   
+    query.sendKeys( keys );
+    query.submit();
   	
   }  
   
@@ -108,11 +98,20 @@
     
   /* ------------------------------- */
   function setUp(){
-   loader = loadClasses();   
+   //loader = loadClasses();   
   }
   
   
   </cfscript>
+  
+  
+  
+  <!--- 
+  
+  Examples of using javaloader. But it does not override classes already loaded. Maybe should
+  ask Mark if there is a way around that!  
+  
+   --->
   
   <cffunction name="loadClasses" access="private">
     <cfscript>

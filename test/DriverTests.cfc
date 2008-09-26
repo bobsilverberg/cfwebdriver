@@ -5,6 +5,10 @@
     function testLoadAndRunFF(){
      runDriver("ff");
     }
+    
+     function testLoadAndRunHtmlUnit(){
+     runDriver("htmlunit");
+    }
         
     function testLoadAndRunIEDriver(){
 	   runDriver("ie");
@@ -22,11 +26,12 @@
     }
     
     function setUp(){
-     driver = createObject("component","cfwebdriver.WebDriver").newInstance("htmlunuit");   
+     driver = createObject("component","cfwebdriver.WebDriver").newInstance("htmlunuit"); 
+     debug(createObject("java","java.lang.System").getEnv("APPDATA"));  
     }
     
     function tearDown(){
-      //driver.close(); //what's the difference between these two?
+      driver.close(); //what's the difference between these two?
       driver.quit();
     }
 
@@ -37,17 +42,13 @@
     <cfargument name="browser">
     <cfscript>
        driver = createObject("component","cfwebdriver.WebDriver").newInstance(arguments.browser);
-	    //driver.setJavascriptEnabled(true);
 	    driver.get("http://google.com");
 	    debug("driver.getTitle() == " & driver.getTitle());
 	    q = driver.findElement("q");
-	    //debug(q);
 	    q.sendKeys("mxunit");
-	    //q = driver.findElement(By.linkText("MXUnit Blog"));
 	    q.submit();
 	    q = driver.findElementByLinkText("MXUnit Blog");
 	    q.click();
-	    //debug(driver.getPageSource());
 	    debug(driver.getTitle());
 	    assertEquals("MXUnit Blog", driver.getTitle());
     
