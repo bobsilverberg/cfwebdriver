@@ -106,11 +106,29 @@
 		}  //)(java.lang.String) java.util.List 
 		
 		
+		
+		function findElementsByName(name) {
+			var elements = arrayNew(1);
+			var element = "";
+			var i = 1;
+			var webelements = this.driver.findElementsByName(name);
+			for(i = 1; i lte arrayLen(webelements); i = i +1){
+			  element = createObject("component","WebElement").init(webelements[i]);
+			  elements.add(element);
+			}
+		  return elements; //array of WebElement objects
+		}  //)(java.lang.String) java.util.List
+		
+		
+		
+		
 		//To Do's ......................
-		function findElements(by){} // org.openqa.selenium.By :: org.openqa.selenium.WebElement 
+		 
 		
 		
-		function findElementsByName(name) {}  //)(java.lang.String) java.util.List 
+		function findElements(by){} // org.openqa.selenium.By :: org.openqa.selenium.WebElement
+		
+		 
 		function findElementsByXPath(xpath) {} //)(java.lang.String) java.util.List 
 		
 		

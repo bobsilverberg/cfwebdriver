@@ -1,5 +1,15 @@
 <cfcomponent output="false" extends="mxunit.framework.TestCase">
+  <cfsavecontent >
     <cfscript>
+  
+  
+  function testFindElementsByName() {
+  	element.sendKeys("mxunit");
+  	elements = driver.findElementsByName("q");
+  	debug(driver.getPageSource());
+  	debug(elements);
+  	
+  }
   
   
   function dumpDrivers(){
@@ -98,9 +108,6 @@
     } 
   
   
-  function testFindElementsByName() {
-  	fail("to do");
-  }
   
   function testFindElementsByXPath() {
    fail("to do");
