@@ -120,6 +120,7 @@
 		
 		
 		function findElementsByXPath(xpath) {
+			var elements = arrayNew(1);
 			var element = "";
 			var i = 1;
 			//var webelements = this.driver.findElementsByXPath(xpath);
@@ -154,19 +155,25 @@
 		 this.driver.get(location);
 		} //org.openqa.selenium.WebDriver$Navigation 
 		
+		//Not tested.
+		function setProxy(proxyUrl, port){
+		 this.driver.setProxy(proxyUrl, port);
+		} //void 
 		
 		
 		//To Do's ......................
 			
 		function findElements(by){
-		  throwNotImplementedException("findElements(by)");
+		  
 		} // org.openqa.selenium.By :: org.openqa.selenium.WebElement
 				
 		function manage(){} //org.openqa.selenium.WebDriver$Options 
 		
-		function setProxy(proxyUrl, port){} //void 
 		
-		function switchTo(){} //org.openqa.selenium.WebDriver$TargetLocator 
+		function switchTo(){
+		  throwNotImplementedException("swicthTo()");
+		} //org.openqa.selenium.WebDriver$TargetLocator 
+		
 
 
  

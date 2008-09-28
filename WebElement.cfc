@@ -1,31 +1,30 @@
 <cfcomponent hint="Represents an element in a page" output="false">
 <cfscript>
-    this.webElement = "";
+  this.webElement = "";
     
-    function init(webElement){
-     this.webElement = arguments.webElement;
-     return this;
-    }
-    
+  function init(webElement){
+   this.webElement = arguments.webElement;
+   return this;
+  }
     
     //TO DO: Accept int as 2nd param, which indicates mouse and keyboard events - KEYPRESS.KEYDOWN ...
-    function sendKeys(keys){
+  function sendKeys(keys){
 	  var localKeys = arrayNew(1);
 	  localKeys[1] = keys;
 	  this.webElement.sendKeys(localKeys);
 	} 
     
-    function submit() {
-      this.webElement.submit();
-    }  
-    
-    function getText() {
-      this.webElement.getText();
-    } //}java.lang.String 
-    
-    function clear() {
-      this.webElement.clear();
-    } //}void 
+  function submit() {
+    this.webElement.submit();
+  }  
+  
+  function getText() {
+    return this.webElement.getText();
+  } //}java.lang.String 
+  
+  function clear() {
+    this.webElement.clear();
+  } //}void 
 	
 	
 	function click() {

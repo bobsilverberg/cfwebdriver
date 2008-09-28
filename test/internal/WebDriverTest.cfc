@@ -112,10 +112,14 @@
   
   
   function testFindElementsByXPath() {
-   
-   	//driver.get("http://google.com");
-  	elements = driver.findElementsByXPath("/html/");
-  	//assertEquals(1,arrayLen(elements),"should be just one element returned");
+   	driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+  	elements = driver.findElementsByXPath("/html/body");
+  	//debug(elements[1].getText());
+  	assertEquals(1,arrayLen(elements),"should be just one element returned");
+  	
+  	elements = driver.findElementsByXPath("/html/head");
+  	debug(elements[1].getText());
+  	
   } 
   
   
@@ -147,6 +151,14 @@
   } 
   
   
+  function testSwitchTo(){
+    fail("to do");
+  } 
+  
+  function testSetProxy(){
+    driver.setProxy("comcast.net",80);
+  } 
+  
   //To Dos ...........................
    
    
@@ -155,12 +167,8 @@
     fail("to do");
   } 
   
-  function testSetProxy(){
-    fail("to do");
-  } 
-  function testSwitchTo(){
-    fail("to do");
-  } 
+  
+  
 	   
    
   /*
