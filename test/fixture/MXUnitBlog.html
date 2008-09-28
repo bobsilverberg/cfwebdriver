@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+<head>
+  <title>MXUnit Blog</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="generator" content="Blogger" />
+<link rel="alternate" type="application/atom+xml" title="MXUnit Blog - Atom" href="http://mxunit.org/blog/atom.xml" />
+<link rel="alternate" type="application/rss+xml" title="MXUnit Blog - RSS" href="http://mxunit.org/blog/rss.xml" />
+<link rel="service.post" type="application/atom+xml" title="MXUnit Blog - Atom" href="http://www.blogger.com/feeds/1973750947775262558/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=1973750947775262558" />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/css/blog_controls.css"/> <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=1973750947775262558&zx=0398aeb6-02d2-4468-a0fb-273ac5f213a4"/>
+
+  <style type="text/css">
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Mr. Moto Rising (Ellington style)
+Designer: Jeffrey Zeldman
+URL:      www.zeldman.com
+Date:     23 Feb 2004
+----------------------------------------------- */
+
+
+  /* Primary layout */
+
+body	{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  color: #555;
+  background: #bba url(http://www.blogblog.com/moto_mr/outerwrap.gif) top center repeat-y;
+  font: small tahoma, "Bitstream Vera Sans", "Trebuchet MS", "Lucida Grande", lucida, helvetica, sans-serif;
+  }
+
+img  {
+  border: 0;
+  display: block;
+  }
+
+
+  /* Wrapper */
+
+@media all {
+  #wrapper  {
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    width: 790px;
+    text-align: left;
+    background: #fff url(http://www.blogblog.com/moto_mr/innerwrap.gif) top right repeat-y;
+    font-size:90%;
+    }
+  }
+@media handheld {
+  #wrapper  {
+    width: 90%;
+    }
+  }
+
+
+  /* Header */
+
+#blog-header  {
+  color: #ffe;
+  background: #bba url(http://www.blogblog.com/moto_mr/headbotborder.gif) bottom left repeat-x;
+  margin: 0 auto;
+  padding: 0 0 15px 0;
+  border: 0;
+  }
+
+#blog-header h1  {
+  font-size: 24px;
+  text-align: left;
+  padding: 15px 20px 0 20px;
+  margin: 0;
+  background-image: url(http://www.blogblog.com/moto_mr/topper.gif);
+  background-repeat: repeat-x;
+  background-position: top left;
+  }
+  
+#blog-header p  {
+  font-size: 110%;
+  text-align: left;
+  padding: 3px 20px 10px 20px;
+  margin: 0;
+  line-height:140%;
+  }
+
+#blog-header a {
+	color: white;
+}
+
+  
+  /* Inner layout */
+
+#content  {
+  padding: 0 20px;
+  }
+  
+@media all {
+  #main  {
+    width: 500px;
+    float: left;
+    }
+
+  #sidebar  {
+    width: 226px;
+    float: right;
+    }
+  }
+@media handheld {
+  #main  {
+    width: 100%;
+    float: none;
+    }
+
+  #sidebar  {
+    width: 100%;
+    float: none;
+    }
+  }
+   
+  /* Bottom layout */
+
+
+#footer  {
+  clear: left;
+  margin: 0;
+  padding: 0 20px;
+  border: 0;
+  text-align: left;
+  border-top: 1px solid #f9f9f9;
+  background-color: #fdfdfd;
+  }
+  
+#footer p  {
+  text-align: left;
+  margin: 0;
+  padding: 10px 0;
+  font-size: x-small;
+  background-color: transparent;
+  color: #999;
+  }
+
+
+  /* Default links   */
+
+a:link, a:visited {
+  font-weight : bold; 
+  text-decoration : none;
+  color: #3366cc;
+  background: transparent; 
+  }
+
+a:hover {
+  font-weight : bold; 
+  text-decoration : underline;
+  color: #3366cc;
+  background: transparent; 
+  }
+
+a:active {
+  font-weight : bold; 
+  text-decoration : none;
+  color: #3366cc;
+  background: transparent;  
+  }
+
+  
+  /* Typography */
+  
+#main p, #sidebar p {
+  line-height: 140%;
+  margin-top: 5px;
+  margin-bottom: 1em;
+  }
+  
+.post-body {
+  line-height: 140%;
+  } 
+
+h2, h3, h4, h5  {
+  margin: 25px 0 0 0;
+  padding: 0;
+  }
+
+h2  {
+  font-size: large;
+  }
+
+h3.post-title {
+  margin-top: 5px;
+  font-size: medium;
+  }
+
+ul  {
+  margin: 0 0 25px 0;
+  }
+
+
+li  {
+  line-height: 160%;
+  }
+
+#sidebar ul   {
+  padding-left: 10px;
+  padding-top: 3px;
+  }
+
+#sidebar ul li {
+  list-style: disc url(http://www.blogblog.com/moto_mr/diamond.gif) inside;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  }
+  
+dl.profile-datablock  {
+  margin: 3px 0 5px 0;
+  }
+dl.profile-datablock dd {
+  line-height: 140%;
+  }
+  
+.profile-img {display:inline;}
+
+.profile-img img {
+  float:left;
+  margin:0 10px 5px 0;
+  border:4px solid #ccb;
+  }
+    
+#comments  {
+  border: 0;
+  border-top: 1px dashed #eed;
+  margin: 10px 0 0 0;
+  padding: 0;
+  }
+
+#comments h3  {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  font-weight: normal;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  }  
+
+#comments dl dt   {
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 35px;
+  padding: 1px 0 0 18px;
+  background: transparent url(http://www.blogblog.com/moto_mr/commentbug.gif) top left no-repeat;
+  color: #bba;
+  }
+
+#comments dl dd  {
+  padding: 0;
+  margin: 0;
+  }
+.deleted-comment {
+  font-style:italic;
+  color:gray;
+  }
+
+
+/* Feeds
+----------------------------------------------- */
+#blogfeeds {
+  }
+#postfeeds {
+  }
+  </style>
+
+<link rel="openid.server" href="http://www.blogger.com/openid-server.g" />
+<!-- --><style type="text/css">@import url(http://www.blogger.com/css/navbar/classic.css);
+div.b-mobile {display:none;}
+</style>
+
+</head>
+<body><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=1973750947775262558&amp;blogName=MXUnit+Blog&amp;publishMode=PUBLISH_MODE_FTP&amp;navbarType=BLACK&amp;layoutType=CLASSIC&amp;homepageUrl=http%3A%2F%2Fmxunit.org%2Fblog%2F&amp;searchRoot=http%3A%2F%2Fblogsearch.google.com%2F" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" title="Blogger Navigation and Search"></iframe>
+<div></div>
+
+
+<!-- Begin wrapper -->
+<div id="wrapper">
+
+  <div id="blog-header"><h1>
+    
+	MXUnit Blog
+	
+  </h1>
+  <p><a href="http://mxunit.org">MXUnit</a> is a unit test framework built by ColdFusion developers for ColdFusion developers. This represents some general rants and the like for project related stuff, unit testing, and CF in general.</p></div>
+
+
+<!-- Begin content -->
+<div id="content">
+
+  <!-- Begin main column -->
+	<div id="main">
+
+
+
+    
+  <h2 class="date-header">Thursday, September 25, 2008</h2>
+
+  
+    
+       
+    <!-- Begin .post -->
+    <div class="post"><a name="5352315078210705161"></a>
+         
+    <h3 class="post-title">
+	 
+	 MXUnit 1.0.3 Now Available
+	 
+    </h3>
+
+    
+	         <div class="post-body">
+	<p>
+      <div style="clear:both;"></div><span style="font-weight: bold;">A new release of MXUnit is now available. Get it while it's hot.</span><br /><br />1.0.3 comprises a "Bug Fix" and a feature.<br /><br />The bug in question was thoroughly described by Bob Silverberg <a href="http://www.silverwareconsulting.com/index.cfm/2008/9/15/Strange-ColdFusion-Error-Object">here</a>. In a nutshell, the eclipse plugin was bombing when an error was thrown containing a non-string error "Type". This required a simple fix to RemoteFacade.cfc. Props to Bob for finding the bug and working with me to pinpoint the source of the problem! Bob sent me a self-contained set of files that clearly demonstrated the issue. It took me literally 30 seconds to see what he was talking about. A lot longer to identify the source of the problem, mind you, but because Bob took the time to make it easy to duplicate the problem, this bug was fixed really fast.<br /><br />The feature came from a suggestion by Randy Merill to enable DirectoryTestSuite to work with relative paths. Previously, it required an absolute path as the Directory argument. Now, it'll take a relative path and try to resolve it using expandPath(). The full discussion is <a href="http://groups.google.com/group/mxunit/browse_thread/thread/68e80a66f59fd560">here</a>.  Props to Randy for the suggestion and for contributing the code to make it happen.<br /><br />Happy testing.<br /><br />--marc<div style="clear:both; padding-bottom:0.25em"></div>
+    </p>
+    </div>
+        <p class="post-footer">
+      <em>posted by Marc Esher @ <a href="http://mxunit.org/blog/2008/09/mxunit-103-now-available.html" title="permanent link">8:07 AM</a></em>
+
+      
+         <a class="comment-link" href="http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=5352315078210705161"location.href=http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=5352315078210705161;><span style="text-transform:lowercase">0 Comments</span></a>
+      
+  <span class="item-control blog-admin pid-260340863"><a style="border:none;" href="http://www.blogger.com/post-edit.g?blogID=1973750947775262558&postID=5352315078210705161" title="Edit Post"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_edit_allbkg.gif" height="18" width="18"></a></span>
+    </p>
+    
+    </div>
+    <!-- End .post -->
+  
+  
+    
+    <!-- Begin #comments -->
+ 
+    <!-- End #comments -->
+
+    
+
+    
+  <h2 class="date-header">Monday, September 8, 2008</h2>
+
+  
+    
+       
+    <!-- Begin .post -->
+    <div class="post"><a name="5918567097371284193"></a>
+         
+    <h3 class="post-title">
+	 
+	 Designing for testability: today's real-world example
+	 
+    </h3>
+
+    
+	         <div class="post-body">
+	<p>
+      <div style="clear:both;"></div>I'm at work now, staring at Eclipse and a method of approximately 150 lines. It's a method for performing sort order updates.  Someone else, long gone, wrote it. It's not ugly code by any means... just complex.<br /><br />And there's a bug.<br /><br />A big part of me wants to work through this bug by testing it in the interface. Change the sort orders in the form, hit Submit, add dumps and aborts, comment out the actual database update in the code, and struggle through till I fix the sucker. But damn, I just know that's gonna be painful and slow.  And if I'm going to spend the time fixing it, I might as well capture my work.<br /><br />So a-unit-testin' I will go.<br /><br />This is the first time I've seen this code, and since I gotta fix a bug in it, I'm wondering.... how easy will it be to write a unit test for this code.  As with most of our stuff, it's database-heavy. And I don't want to let it perform actual database updates and then test the database after-the-fact to confirm that the updates I wanted to happen actually happen.  That right there is one way to describe hard-to-test code: you have to perform updates, then refetch the data to see if the results you expected are true.<br /><br />This code I'm looking at has several loops, many nested. I was hoping not to see a bunch of CFQueries inside the loops.  This would've been a rat's nest, virtually impossible to test well. But instead, there's only a single CFQuery chunk, at the bottom of the method. The original programmer did a really smart thing: He built up a big ol' array of the updates he wanted to perform, and then in the end looped over the array and did the database work.<br /><br />This is great for 2 reasons:<br /><ol><li>It's a lot easier to test arrays for the data they contain than it is to test the database after the fact</li><li>Since there's only one chunk of code that performs a database Update, I can easily "turn the update off", thereby not updating the database at all.</li></ol>#2 probably needs some more explanation, so let me show.<br /><br />Here's what the code basically looked like to start. I've omitted all the actual logic since it's not important here. The important part is that there's only a single block for the queries, and that block is at the end of the original method:<br /><br /><pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>&lt;cffunction name="moveSection" returntype="array" hint="resorts stuff" access="public"&gt;<br />  &lt;cfargument name="blah"&gt;<br /><br />  &lt;cfset var sections = ArrayNew(1)&gt;<br />  &lt;cfset var ii = 1&gt;<br />  &lt;cfset var jj = 1&gt;<br />  &lt;cfset var kk = 1&gt;<br />  &lt;cfset var keyList = ""&gt;<br />  &lt;cfset var updateTemplateSections = ""&gt; <br />  &lt;!--- assload of logic to build up an array ---&gt;<br />  .....<br /><br />  &lt;!--- process array and extract sectionIDs in order ---&gt;<br />  &lt;cfloop from="1" to="#arrayLen(sections)#" index="ii"&gt;<br />      &lt;cfset keyList = listAppend(keyList,sections[ii].sectionID)&gt;<br />      &lt;cfloop from="1" to="#arrayLen(sections[ii].children)#" index="jj"&gt;<br />          &lt;cfset keyList = listAppend(keyList,sections[ii].children[jj].sectionID) /&gt;<br />      &lt;/cfloop&gt;<br />  &lt;/cfloop&gt;<br /><br />  &lt;!--- finally, do the update ---&gt; <br />  &lt;cfloop from="1" to="#listLen(keyList)#" index="kk"&gt;<br />      &lt;cfquery name="updateTemplateSections" datasource="#getDsn()#"&gt;<br />          UPDATE    templateSections<br />          SET        sortOrder = #kk#<br />          WHERE    templateSectionId = #listGetAt(keyList,kk)#<br />      &lt;/cfquery&gt;<br />  &lt;/cfloop&gt;<br /><br />  &lt;cfreturn sections&gt;<br /><br />&lt;/cffunction&gt;<br /></code></pre><br /><br /><br />As I said, in my test, I want to do two things: Test the array for its data, and ensure the database update doesn't occur.<br /><br />This method, as originally written,<span style="font-weight: bold;"> almost gets me there</span>. To the original programmer (<a href="http://mrmx.blogspot.com/">my friend Mike</a>), nice job! The obvious problem here, with respect to testing, is that the update will still happen.  So what to do?<br /><br />Since the original code has a single block for the DB update, it's easy for me to pull out that chunk of code into a separate method, and then inside my test, override that method with one that simply doesn't perform any updates.<br /><br />I call this "Extract and Override".<br /><br />Here's my new code. It now contains 2 methods. I've simply extracted out that last chunk of DB updates into a separate method, and then I call that in the original function:<br /><br /><pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>&lt;cffunction name="moveSection" returntype="array" hint="resorts stuff" access="public"&gt;<br />  &lt;cfargument name="blah"&gt;<br /><br />  &lt;cfset var sections = ArrayNew(1)&gt;<br />  &lt;cfset var ii = 1&gt;<br />  &lt;cfset var jj = 1&gt;<br /><br />  &lt;cfset var keyList = ""&gt;<br /> <br />  &lt;!--- assload of logic to build up an array ---&gt;<br />  .....<br /><br />  &lt;!--- process array and extract sectionIDs in order ---&gt;<br />  .....<br /><br />  &lt;!--- call my new method, which I've extracted ---&gt;<br />  &lt;cfset performMoveSectionUpdate(keyList)&gt;<br /><br />  &lt;cfreturn sections&gt;<br /><br />&lt;/cffunction&gt;<br /><br />&lt;cffunction name="performMoveSectionUpdate" access="private"&gt;<br />  &lt;cfargument name="keyList"&gt;<br />  &lt;cfset var kk = 1&gt;<br />  &lt;cfset var updateTemplateSections = ""&gt;<br />  &lt;!--- finally, do the update ---&gt; <br />  &lt;cfloop from="1" to="#listLen(keyList)#" index="kk"&gt;<br />      &lt;cfquery name="updateTemplateSections" datasource="#getDsn()#"&gt;<br />          UPDATE    templateSections<br />          SET        sortOrder = #kk#<br />          WHERE    templateSectionId = #listGetAt(keyList,kk)#<br />      &lt;/cfquery&gt;<br />  &lt;/cfloop&gt;<br />&lt;/cffunction&gt;<br /></code></pre><br /><br /><br />Finally, the unit test. Since I've extracted out the actual code that performs the update, it's trivial to override that with MXUnit in the test. All I do is create a new, private function inside the test itself that does nothing.  Then, I use<a href="http://mxunit.org/doc/index.cfm?doc=injectmethod"> injectMethod</a> to replace the existing function with my new for-testing-only function:<br /><br /><pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>&lt;cffunction name="moveSectionDownResortsCorrectly"&gt;<br />      &lt;cfset injectMethod(gw, this, "performMoveSectionUpdate", "performMoveSectionUpdate")&gt;<br />      &lt;cfset sections = gw.moveSection(arg1,arg2,arg3)&gt;<br />      &lt;!--- perform assertions as needed ---&gt;<br />   <br />  &lt;/cffunction&gt;<br /><br />  &lt;cffunction name="performMoveSectionUpdate" access="private"&gt;<br />      &lt;cfreturn ""&gt;<br />  &lt;/cffunction&gt;<br /></code></pre><br /><br /><span style="font-weight: bold;">Bottom line: </span><br /><ol><li>in my original object, extract out the behavior that I don't want to occur, during my test, into a separate method</li><li>in the test, override that method in my original object with a new, innocuous method<br /></li></ol>I'm now free to test the arrays for their data without fear of corrupting the database since I'm no longer performing any updates in the method I want to test. This leads to a more predictable, less brittle, faster test.<br /><br />-- marc<div style="clear:both; padding-bottom:0.25em"></div>
+    </p>
+    </div>
+        <p class="post-footer">
+      <em>posted by Marc Esher @ <a href="http://mxunit.org/blog/2008/09/designing-for-testability-todays-real.html" title="permanent link">8:37 AM</a></em>
+
+      
+         <a class="comment-link" href="http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=5918567097371284193"location.href=http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=5918567097371284193;><span style="text-transform:lowercase">3 Comments</span></a>
+      
+  <span class="item-control blog-admin pid-260340863"><a style="border:none;" href="http://www.blogger.com/post-edit.g?blogID=1973750947775262558&postID=5918567097371284193" title="Edit Post"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_edit_allbkg.gif" height="18" width="18"></a></span>
+    </p>
+    
+    </div>
+    <!-- End .post -->
+  
+  
+    
+    <!-- Begin #comments -->
+ 
+    <!-- End #comments -->
+
+    
+
+    
+    
+       
+    <!-- Begin .post -->
+    <div class="post"><a name="3914247512592715147"></a>
+         
+    <h3 class="post-title">
+	 
+	 RIA + TDD FTW. WTF?
+	 
+    </h3>
+
+    
+	         <div class="post-body">
+	<p>
+      <div style="clear:both;"></div>Carl Jung coined the term "<a href="http://en.wikipedia.org/wiki/Synchronicity">synchronicity</a>" to describe events that at first appear coincidental but which are potentially meaningfully connected.... a "meaningful coincidence".<br /><br />I've been thinking about this for some time now: that the advent of Rich Internet Applications (RIAs) could potentially be a tremendous boon for encouraging boring old server-side unit testing. Now, you might be thinking: "the two are completely unrelated". You can't get much more disparate. RIAs are sexy, they're hip, they're sleek and fun and whizbang. Unit testing, on the other hand, has got to be the least sexy coding you can do. It's the toothless, saggy-butt, scraggy-haired 4th cousin of cool technologies, at least to many people.<br /><br />Cranking out animated heatmap hoogies in flex is toot sweet. Writing "assertEquals(4,query.recordcount)" ain't.<br /><br />Back when I started writing web apps in CF, debugging was pretty simple because you had<span style="font-weight: bold;"> easy access to the information you needed in order to debug</span>. You load a page. If you have problems, you maybe throw in a cfdump/cfabort. Or you submit a form and want to see that the DB update query code looks OK, so you comment out the redirect in your index.cfm file, and then look at the debug output at the bottom of the page to check that your database updates are as expected. Snip snap done.<br /><br />But when you're building richer interfaces, this work is often either done asynchronously using javascript (ajax), in which case you can't rely on your old tricks; or, even more difficult, it's done in a movie client (flex/flash, silverlight) and you're even further removed from the information you need in order to do your debugging.<br /><br /><span style="font-weight: bold;">The further removed you are from development-time access to debug information, the more time you spend debugging development-time problems.</span>  Let that sink in.<br /><br />There is no cfdump/cfabort simplicity when your front end is a flash movie making remote calls to your backend CFCs.<br /><br />With richer interfaces, the time you spend debugging your backend code increases exponentially.<br /><br />Not so sexy anymore, is it?<br /><br />But here's the thing: What if, rather than try to debug your code at runtime in the interface, you instead remove the interface from the equation. You stay in CF for your debugging. You get your CFDumps back. In short, you get closer to your data again... you get closer to the information you need to do your debugging.  <span style="font-weight: bold;">You're no longer so far removed.</span><br /><br />This is where our ugly cousin, unit testing, comes in for the win. By testing your backend CF code with more CF code, you stay on the server and you catch your problems earlier. You codify the expectations of the code. You think more about the edge cases. You root out bugs earlier in the process and thereby make writing your RIA joyful again. You can focus your front-end efforts on the pizazz because you're not worrying so much that your queries are working as expected  -- you've already worked out the server-side kinks in your tests.<br /><br />The common arguments against unit testing -- that it takes too much time, that you write too much code, etc -- start to fall away as it becomes apparent that the time savings you accrue start to overtake the lost time spent trying to debug server-side code from an RIA.<br /><br />This is what I've been thinking about: that RIAs make it harder to debug server-side code. Therefore, they encourage more unit testing of server-side code because <span style="font-weight: bold;">the value proposition of unit testing is clearer when put in contrast to the drudgery of runtime debugging the backend of an RIA.</span> <br /><br />Which leads to my moment of synchronicity today. I had planned on writing this blog post on how RIA development damn near requires backend TDD. Then, I came to work this morning, and in my feedreader was this: Indy Nagpal gave a <a href="http://nagpals.com/blog/index.cfm/2008/9/8/Testing-for-Success--My-presentation-at-Web-on-the-Piste-2008">presentation on server-side TDD at a recent RIA conference</a>. Not at CFUnited or CFObjective or the local CFUG. At an RIA conference. I thought that was pretty cool, and it suggests to me that other (way smarter) people are thinking the same thing: that if you're writing rich internet apps, then server-side unit testing is getting harder to ignore.<br /><br />--marc<div style="clear:both; padding-bottom:0.25em"></div>
+    </p>
+    </div>
+        <p class="post-footer">
+      <em>posted by Marc Esher @ <a href="http://mxunit.org/blog/2008/09/ria-tdd-ftw-wtf.html" title="permanent link">7:10 AM</a></em>
+
+      
+         <a class="comment-link" href="http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=3914247512592715147"location.href=http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=3914247512592715147;><span style="text-transform:lowercase">0 Comments</span></a>
+      
+  <span class="item-control blog-admin pid-260340863"><a style="border:none;" href="http://www.blogger.com/post-edit.g?blogID=1973750947775262558&postID=3914247512592715147" title="Edit Post"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_edit_allbkg.gif" height="18" width="18"></a></span>
+    </p>
+    
+    </div>
+    <!-- End .post -->
+  
+  
+    
+    <!-- Begin #comments -->
+ 
+    <!-- End #comments -->
+
+    
+
+    
+  <h2 class="date-header">Thursday, September 4, 2008</h2>
+
+  
+    
+       
+    <!-- Begin .post -->
+    <div class="post"><a name="6334287180389356017"></a>
+         
+    <h3 class="post-title">
+	 
+	 MXUnit Eclipse Plugin Test History Feature
+	 
+    </h3>
+
+    
+	         <div class="post-body">
+	<p>
+      <div style="clear:both;"></div>I'm happy to announce the latest feature to the MXUnit Eclipse plugin: Test History. Every time you run a test (or directory of tests), it adds that test to your history. When you want to revisit a test, you can open up the history menu, find your test, and reload it. Here's a screen shot to demonstrate:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://mxunit.org/blog/uploaded_images/PluginTestHistory-747605.gif"><img style="margin: 0pt 10px 10px 0pt; float: left; cursor: pointer;" src="http://mxunit.org/blog/uploaded_images/PluginTestHistory-747593.gif" alt="" border="0" /></a><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />There are a few differences between the JUnit and MXUnit implementations of this functionality, born out of my own frustration with the JUnit plugin. I decided that if I were going to add test history, then I was going to make it work how I always wished the JUnit plugin would behave.<br /><br /><ol><li>No duplicate entries. "com.my.SomeTest" will only ever appear once in the list, and will only reflect the last run. If you run that test 20 times, you won't get 20 entries in the list</li><li>When running a directory of tests, you see the full path to the directory in the list</li><li>It's easy to distinguish between single TestCase runs and Directory runs. Simply, directory runs start with a slash.</li><li>A more reasonable start value for remembered test runs. JUnit defaults to 10 items in the history. Dunno why.  MXUnit defaults to 30. Considering that duplicates never appear, this seems like a reasonable default. In addition, changing the default is simple and obvious.</li></ol>There's one thing to note, and I'm still not sure how I feel about this because I haven't worked with it enough to form an opinion yet: Tests retain their relative position in the test history no matter how many times they are run. Let me explain:<br /><br />You run Test1.cfc at 7:12:00 AM. This test gets position 1.<br /><br />You run Test2.cfc at 7:12:15 AM. This test gets position 1. Test1 is bumped to position 2 (i.e. it is lower in the list of tests in the menu).<br /><br />You run /mytests/ at 7:13:30 AM. This test gets position 1. Test2 is bumped to position 2, and Test1 is bumped to position 3.<br /><br />So far, this is how you'd expect it to work. Here's where it changes:<br /><br />You then select Test1.cfc from the test history and re-run that test.  Now, since this last run makes it "newer", in a sense, you might expect it to show up at the top of the list. However, I am currently opting to keep that test in its original position. This might seem weird, but I'll ask you to reserve judgment until you've had a chance to work with it a bit.<br /><br />As always, feedback is welcome.<br /><br />Happy testing!<div style="clear:both; padding-bottom:0.25em"></div>
+    </p>
+    </div>
+        <p class="post-footer">
+      <em>posted by Marc Esher @ <a href="http://mxunit.org/blog/2008/09/mxunit-eclipse-plugin-test-history.html" title="permanent link">7:07 AM</a></em>
+
+      
+         <a class="comment-link" href="http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=6334287180389356017"location.href=http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=6334287180389356017;><span style="text-transform:lowercase">3 Comments</span></a>
+      
+  <span class="item-control blog-admin pid-260340863"><a style="border:none;" href="http://www.blogger.com/post-edit.g?blogID=1973750947775262558&postID=6334287180389356017" title="Edit Post"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_edit_allbkg.gif" height="18" width="18"></a></span>
+    </p>
+    
+    </div>
+    <!-- End .post -->
+  
+  
+    
+    <!-- Begin #comments -->
+ 
+    <!-- End #comments -->
+
+    
+
+    
+  <h2 class="date-header">Monday, August 25, 2008</h2>
+
+  
+    
+       
+    <!-- Begin .post -->
+    <div class="post"><a name="104679620061748921"></a>
+         
+    <h3 class="post-title">
+	 
+	 Eclipse running out of memory?
+	 
+    </h3>
+
+    
+	         <div class="post-body">
+	<p>
+      <div style="clear:both;"></div>At home, where I do most of my experimental development, I have a fairly substantial machine. It's windows, but don't hold it against me. It performs like a mofo. 64-bit, 4GB memory, Core2. At work, I have 32-bit, 2GB memory, Core2.<br /><br />I run Eclipse 3.3 with tons of plugins. I generally run eclipse from the command line with 512M heap, using the jdk1.6 JVM<br /><br />So imagine my surprise when I start getting OutOfMemory errors from eclipse at home. I traced it to the JBoss plugin, but couldn't figure out for the life of me why it was causing this behavior. I wasn't actively using any of the functionality in the plugin at the time I'd get the errors. I turned off auto-activation at startup for the jboss and a handful of other plugins, but to no avail.<br /><br />And this was getting in the way of me getting stuff done. Eclipse "manage configuration" is a flaky piece of shit, so disabling suspect plugins didn't work. Thus, I did what any red-blooded American would do:  wipe out any folders in the  plugins/features directories that referenced jboss. It was time for a fresh start.<br /><br />That fixed the memory problems and let me get back to work.<br /><br />But honestly.... could you live with that answer? I couldn't.  So off I went. I asked the interwebs, and after nice traipse through various newsgroups and wikis and bugtrackers, I stumbled on a fix. Ooooooh, what a maddening f*cking fix.<br /><br />Here's the bottom line: my memory troubles went away when I added this to my startup file:<br /><br />-XX:MaxPermSize=256m<br /><br />That's all.<br /><br />By the way, here's where I ended up: https://bugs.eclipse.org/bugs/show_bug.cgi?id=92250. If you're interested, that bug explains pretty well why I was hitting the memory issues I had. It doesn't explain why it was JBoss plugin causing it... but right now, I don't care.<br /><br />I also installed the memory monitor plugin attached to that bug. It's no better than what you get from jconsole, but marginally more convenient than attaching eclipse to a jmx session and typing "jconsole".<br /><br />So, if you're getting OutOfMemory errors while running eclipse, and increasing the heap isn't cutting it (-vmargs -Xmx512M), it's possibly not a heap problem but a permgen problem.<br /><br />--marc<div style="clear:both; padding-bottom:0.25em"></div>
+    </p>
+    </div>
+        <p class="post-footer">
+      <em>posted by Marc Esher @ <a href="http://mxunit.org/blog/2008/08/eclipse-running-out-of-memory.html" title="permanent link">7:58 AM</a></em>
+
+      
+         <a class="comment-link" href="http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=104679620061748921"location.href=http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=104679620061748921;><span style="text-transform:lowercase">2 Comments</span></a>
+      
+  <span class="item-control blog-admin pid-260340863"><a style="border:none;" href="http://www.blogger.com/post-edit.g?blogID=1973750947775262558&postID=104679620061748921" title="Edit Post"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_edit_allbkg.gif" height="18" width="18"></a></span>
+    </p>
+    
+    </div>
+    <!-- End .post -->
+  
+  
+    
+    <!-- Begin #comments -->
+ 
+    <!-- End #comments -->
+
+    
+
+    
+  <h2 class="date-header">Thursday, August 21, 2008</h2>
+
+  
+    
+       
+    <!-- Begin .post -->
+    <div class="post"><a name="40292352333947322"></a>
+         
+    <h3 class="post-title">
+	 
+	 MXUnit 1.0.2 Now Available
+	 
+    </h3>
+
+    
+	         <div class="post-body">
+	<p>
+      <div style="clear:both;"></div>MXUnit 1.0.2 is <a href="http://mxunit.org/download.cfm">now available for download</a>.  This release adds new functionality for mocking/injecting properties into objects at time of test, which arose from <a href="http://groups.google.com/group/mxunit/browse_thread/thread/cd19590dfb1c205c#">this discussion</a>. It's similar to the <a href="http://mxunit.org/doc/index.cfm?doc=injectmethod">injectMethod</a> functionality introduced in 1.0.1, but for properties instead of methods. <a href="http://mxunit.org/doc/index.cfm?doc=injectproperty">Details are here</a>.<br /><br />In addition, a few more bugs have been fixed for Railo and openBD compatibility.<br /><br />Finally, I want to point out again the eclipse dictionary and snippets that are available in the download. See the "cfeclipse" directory. In particular, check out the copysnippets.xml ANT file. It makes keeping your set of mxunit cfeclipse snippets much easier. It will not tramp on your existing shortcuts, as it only adds/overrides shortcuts whose snippets are in the mxunit package.<br /><br />The eclipse dictionary is not the entire mxunit api.... just the public stuff that you care about (assertions, etc).  There are instructions in each directory for how to "install" the dictionary and snippets.<br /><br />Enjoy.<br /><br />marc<div style="clear:both; padding-bottom:0.25em"></div>
+    </p>
+    </div>
+        <p class="post-footer">
+      <em>posted by Marc Esher @ <a href="http://mxunit.org/blog/2008/08/mxunit-102-now-available.html" title="permanent link">7:19 AM</a></em>
+
+      
+         <a class="comment-link" href="http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=40292352333947322"location.href=http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=40292352333947322;><span style="text-transform:lowercase">0 Comments</span></a>
+      
+  <span class="item-control blog-admin pid-260340863"><a style="border:none;" href="http://www.blogger.com/post-edit.g?blogID=1973750947775262558&postID=40292352333947322" title="Edit Post"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_edit_allbkg.gif" height="18" width="18"></a></span>
+    </p>
+    
+    </div>
+    <!-- End .post -->
+  
+  
+    
+    <!-- Begin #comments -->
+ 
+    <!-- End #comments -->
+
+    
+
+    
+  <h2 class="date-header">Thursday, August 14, 2008</h2>
+
+  
+    
+       
+    <!-- Begin .post -->
+    <div class="post"><a name="696508539219310977"></a>
+         
+    <h3 class="post-title">
+	 
+	 Securing a RemoteFacade.cfc
+	 
+    </h3>
+
+    
+	         <div class="post-body">
+	<p>
+      <div style="clear:both;"></div>Nathan Mische has a nice article on how to let the mxunit see a RemoteFacade.cfc file sitting behind a basic authentication scheme.  Check it out here <a href="http://www.mischefamily.com/nathan/index.cfm/2008/8/13/Basic-Authentication-With-ColdFusion">http://www.mischefamily.com/nathan/index.cfm/2008/8/13/Basic-Authentication-With-ColdFusion</a><div style="clear:both; padding-bottom:0.25em"></div>
+    </p>
+    </div>
+        <p class="post-footer">
+      <em>posted by Mike @ <a href="http://mxunit.org/blog/2008/08/securing-remotefacadecfc.html" title="permanent link">10:18 AM</a></em>
+
+      
+         <a class="comment-link" href="http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=696508539219310977"location.href=http://www.blogger.com/comment.g?blogID=1973750947775262558&postID=696508539219310977;><span style="text-transform:lowercase">0 Comments</span></a>
+      
+  <span class="item-control blog-admin pid-1897816558"><a style="border:none;" href="http://www.blogger.com/post-edit.g?blogID=1973750947775262558&postID=696508539219310977" title="Edit Post"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_edit_allbkg.gif" height="18" width="18"></a></span>
+    </p>
+    
+    </div>
+    <!-- End .post -->
+  
+  
+    
+    <!-- Begin #comments -->
+ 
+    <!-- End #comments -->
+
+    
+    <!-- End main column -->	
+	</div>
+	
+
+
+
+	
+	<div id="sidebar">
+
+
+
+    <!-- Begin #profile-container -->
+
+   <div id='profile-container'>
+<h2 class='sidebar-title'>Contributors</h2>
+<ul class='profile-datablock'>
+<li class='profile-link'><a href='http://www.blogger.com/profile/06624894387927690246'>bill</a></li>
+<li class='profile-link'><a href='http://www.blogger.com/profile/02592223337712827862'>Mike</a></li>
+<li class='profile-link'><a href='http://www.blogger.com/profile/04399041626461799296'>Mike Henke</a></li>
+<li class='profile-link'><a href='http://www.blogger.com/profile/01751809213128404235'>Raj</a></li>
+<li class='profile-link'><a href='http://www.blogger.com/profile/05942611191966201181'>Marc Esher</a></li>
+<li class='profile-link'><a href='http://www.blogger.com/profile/09489928739688727579'>AXS</a></li>
+</ul>
+</div>
+
+
+    <!-- End #profile-container -->
+    
+        
+  <h2 class="sidebar-title">Links</h2>
+    <ul>
+    	<li><a href="http://mxunit.org/">MXUnit</a></li>
+		<li><a href="http://mxunit.org/blog/rss.xml"><img src="http://mxunit.org/images/feed-icon-14x14.png" border="0" alt="RSS Feed" height="14" width="14" style="display:inline">  RSS</a></li>
+    	<!--- <li><a href="http://help.blogger.com/bin/answer.py?answer=41427">Edit-Me</a></li>
+    	<li><a href="http://help.blogger.com/bin/answer.py?answer=41427">Edit-Me</a></li> --->
+  </ul>
+  
+  
+  
+  <h2 class="sidebar-title">Previous Posts</h2>
+
+    <ul id="recently">
+    
+        <li><a href="http://mxunit.org/blog/2008/09/mxunit-103-now-available.html">MXUnit 1.0.3 Now Available</a></li>
+     
+        <li><a href="http://mxunit.org/blog/2008/09/designing-for-testability-todays-real.html">Designing for testability: today&#39;s real-world exam...</a></li>
+     
+        <li><a href="http://mxunit.org/blog/2008/09/ria-tdd-ftw-wtf.html">RIA + TDD FTW. WTF?</a></li>
+     
+        <li><a href="http://mxunit.org/blog/2008/09/mxunit-eclipse-plugin-test-history.html">MXUnit Eclipse Plugin Test History Feature</a></li>
+     
+        <li><a href="http://mxunit.org/blog/2008/08/eclipse-running-out-of-memory.html">Eclipse running out of memory?</a></li>
+     
+        <li><a href="http://mxunit.org/blog/2008/08/mxunit-102-now-available.html">MXUnit 1.0.2 Now Available</a></li>
+     
+        <li><a href="http://mxunit.org/blog/2008/08/securing-remotefacadecfc.html">Securing a RemoteFacade.cfc</a></li>
+     
+        <li><a href="http://mxunit.org/blog/2008/08/mxunit-eclipse-plugin-update-this-ones.html">MXUnit eclipse plugin update. This one&#39;s for Barne...</a></li>
+     
+        <li><a href="http://mxunit.org/blog/2008/07/railo-testing-and-stogies.html">Railo, Testing, and Stogies</a></li>
+     
+        <li><a href="http://mxunit.org/blog/2008/07/coldbox-and-cfeclipse-frameworks.html">Coldbox and the CFEclipse Frameworks explorer</a></li>
+     
+  </ul>
+    
+  <h2 class="sidebar-title">Archives</h2>
+    <ul class="archive-list">
+
+   	  
+    	<li><a href="http://mxunit.org/blog/2007_10_01_archive.html">October 2007</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2007_12_01_archive.html">December 2007</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2008_01_01_archive.html">January 2008</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2008_02_01_archive.html">February 2008</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2008_03_01_archive.html">March 2008</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2008_04_01_archive.html">April 2008</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2008_05_01_archive.html">May 2008</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2008_06_01_archive.html">June 2008</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2008_07_01_archive.html">July 2008</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2008_08_01_archive.html">August 2008</a></li>
+	  
+    	<li><a href="http://mxunit.org/blog/2008_09_01_archive.html">September 2008</a></li>
+	  
+
+  </ul>
+  
+      <p id="powered-by"><a href="http://www.blogger.com"><img src="http://buttons.blogger.com/bloggerbutton1.gif" alt="Powered by Blogger" /></a></p>
+      <p id="blogfeeds">Subscribe to<br/>Posts [<a target="_blank" href="http://mxunit.org/blog/atom.xml" type="application/atom+xml">Atom</a>]</p>
+  
+    <!--
+    <p>This is a paragraph of text that could go in the sidebar.</p>
+    -->
+
+  <!-- End sidebar -->
+  </div>
+
+<!-- End content -->
+</div>
+
+<div id="footer">
+<p><!-- Blog contents copyright &copy; 2004 <a href="mailto:johndoe@example.com" title="Write to me.">Your Name Here</a> -->&nbsp;</p>
+</div>
+
+
+<!-- End wrapper -->
+</div>
+
+
+
+</body>
+</html>

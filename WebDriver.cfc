@@ -6,7 +6,7 @@
 
 */
 
-<cfcomponent displayname="WebDriver" output="false">
+<cfcomponent displayname="WebDriver" output="true">
 
   
   <cfscript>
@@ -52,15 +52,14 @@
 	   }  
 	
 	
-	
-        function close() {
-          this.driver.close();
-        }
+    function close() {
+      this.driver.close();
+    }
+  
          
-		function executeScript() //java.lang.String, java.lang.Object[] :: java.lang.Object
-		{
+		function executeScript() {
 		  throwNotImplementedException("executeScript");
-		}
+		} //java.lang.String, java.lang.Object[] :: java.lang.Object 
 		
 		 
 		function findElement(by){
@@ -120,28 +119,53 @@
 		}  //)(java.lang.String) java.util.List
 		
 		
+		function findElementsByXPath(xpath) {
+			var element = "";
+			var i = 1;
+			//var webelements = this.driver.findElementsByXPath(xpath);
+			var webelements = this.driver.findElements(this.By.xPath(xpath));
+			for(i = 1; i lte arrayLen(webelements); i = i +1){
+			  element = createObject("component","WebElement").init(webelements[i]);
+			  elements.add(element);
+			}
+		  return elements; //array of WebElement objects
+		} 
+		
+		//)(java.lang.String) java.util.List 
+		
+		function getVisible() {
+		  return this.driver.getVisible();
+		} //boolean
+		
+		
+		function setVisible(visible){
+			writeoutput(visible);
+		  this.driver.setVisible( javacast("boolean",visible) );
+		} //void 
+		
+		
+		function quit() {
+		  this.driver.quit();
+		}  //void 
+		
+		
+		function navigate(location){
+		 //throwNotImplementedException("navigate ... not shure best how to implement this");	
+		 this.driver.get(location);
+		} //org.openqa.selenium.WebDriver$Navigation 
+		
 		
 		
 		//To Do's ......................
-		 
-		
-		
-		function findElements(by){} // org.openqa.selenium.By :: org.openqa.selenium.WebElement
-		
-		 
-		function findElementsByXPath(xpath) {} //)(java.lang.String) java.util.List 
-		
-		
-		
-		
-		function getVisible() {} //boolean 
-	
+			
+		function findElements(by){
+		  throwNotImplementedException("findElements(by)");
+		} // org.openqa.selenium.By :: org.openqa.selenium.WebElement
+				
 		function manage(){} //org.openqa.selenium.WebDriver$Options 
-		function navigate(){} //org.openqa.selenium.WebDriver$Navigation 
-		function quit() {}  //void 
 		
 		function setProxy(proxyUrl, port){} //void 
-		function setVisible(visible){} //void 
+		
 		function switchTo(){} //org.openqa.selenium.WebDriver$TargetLocator 
 
 
