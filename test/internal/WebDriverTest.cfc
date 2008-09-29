@@ -2,6 +2,17 @@
     <cfscript>
   
   
+  function testFindElementsByName() {
+  	driver.get("http://google.com");
+    element = driver.findElement("q");
+  	element.sendKeys("mxunit");
+  	elements = driver.findElementsByName("q");
+  	debug(driver.getPageSource());
+  	debug(elements);
+  	
+  }
+  
+  
   function dumpDrivers(){
     debug(createObject("java","org.openqa.selenium.htmlunit.HtmlUnitDriver"));
     
@@ -34,7 +45,8 @@
  
  
   function testFindElement(){
-   
+    driver.get("http://google.com");
+    element = driver.findElement("q");
     assertIsTypeOf(element, "cfwebdriver.WebElement");
     debug(element);
     element.sendKeys("mxunit");
@@ -49,6 +61,8 @@
   
   
   function testGetCurrentUrl() {
+    driver.get("http://google.com");
+    element = driver.findElement("q");
     element.sendKeys("mxunit");
     element.submit();
     debug(driver.getCurrentUrl());
@@ -58,22 +72,20 @@
   
   
   function testFindElementByLinkText() {
-   element.sendKeys("mxunit blog");
-   element.submit();
-   debug(driver.getTitle());
-   //element = driver.findElementByLinkText("Privacy");
-   debug(element);
-   //element.click();
-   fail("driver.findElementByLinkText() not intuitive. Also appears to kill instance of HTML unit. Handle exceptions in CF IMplementation");
+   driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+   element = driver.findElementByLinkText("bill");
+   assertEquals("bill",element.getText(),"getText() should return a value only if lin text is found. Should fail otherwise");
   } 
   
   function testGetTitle() {
-    assertEquals("Google", driver.getTitle());
+     driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+     assertEquals("MXUnit Blog",driver.getTitle());
   } 
   
   
   function testGetPageSource() {
-    //assertTrue(len(driver.getPageSource()) > 100 );
+   driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+   assertTrue(len(driver.getPageSource()) > 1000 );
   }
   
   function testIsJavascriptEnabled(){
@@ -87,50 +99,76 @@
    } 
   
   
-  function testFindElementsById() {
-  	//debug( driver.findElementsById("gbar") );
-  } 
-  
-  
-  //To Dos ...........................
   function testFindElements(){
-  	fail("to do");
-    } 
-  
-  
-  function testFindElementsByName() {
-  	fail("to do");
+  	driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+  	driver.findElements("foo");
   }
   
-  function testFindElementsByXPath() {
-   fail("to do");
+  function testFindElementsById() {
+  	driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+  	elements = driver.findElementsById("navbar-iframe");
+  	assertEquals(1,arrayLen(elements),"should be just one element returned");
   } 
-
+  
+  
+  function testFindElementsByXPath() {
+   	driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+  	elements = driver.findElementsByXPath("/html/body");
+  	//debug(elements[1].getText());
+  	assertEquals(1,arrayLen(elements),"should be just one element returned");
+  	
+  	elements = driver.findElementsByXPath("/html/head");
+  	debug(elements[1].getText());
+  	
+  } 
   
   
   function testGetVisible() {
-    fail("to do");
+   	driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+   	debug("Not sure what driver.visible means ...");
+   	debug(driver.getVisible());
+   	assertFalse(driver.getVisible());
   }
+  
+   function testSetVisible(){
+    driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+   	driver.setVisible(true);
+   	debug(driver.getVisible());
+    assertTrue(driver.getVisible() , "driver.SetVisible(not working?). Why should it?");
+   	//driver.setVisible("false");
+   	//assertFalse(driver.getVisible());
+  } 
+  
+  function testQuit() {
+   driver.quit();
+  }  
+  
+  
+  function testNavigate(){
+    driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+    driver.navigate("http://google.com");
+    assertEquals("Google",driver.getTitle());
+  } 
+  
+  
+  function testSwitchTo(){
+    fail("to do");
+  } 
+  
+  function testSetProxy(){
+    driver.setProxy("comcast.net",80);
+  } 
+  
+  //To Dos ...........................
+   
+   
   
   function testManage(){
     fail("to do");
   } 
-  function testNavigate(){
-    fail("to do");
-  } 
-  function testQuit() {
-    fail("to do");
-  }  
- 
-  function testSetProxy(){
-    fail("to do");
-  } 
-  function testSetVisible(){
-    fail("to do");
-  } 
-  function testSwitchTo(){
-    fail("to do");
-  } 
+  
+  
+  
 	   
    
   /*
@@ -140,8 +178,7 @@
     function setUp(){
       driver = createObject("component","cfwebdriver.WebDriver");
       driver = driver.newInstance("htmlunit");
-      driver.get("http://google.com");
-      element = driver.findElement("q");
+      
     }
     
     function tearDown(){ 

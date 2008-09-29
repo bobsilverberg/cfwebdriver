@@ -18,13 +18,20 @@
     }  
     
     
+    function testFindByXpath(){
+    	driver.get("file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html");
+  	  //elements = driver.findElements(ByXPath("/html/");
+  	  elements = driver.findElements(By.XPath("/html/body"));
+  	  debug(elements[1].getText());
+    }
+    
     function dumpDriver(){
      
     }
     
     function setUp(){
       driver = createObject("java","org.openqa.selenium.htmlunit.HtmlUnitDriver");
-	  by = createObject("java","org.openqa.selenium.By");
+	    by = createObject("java","org.openqa.selenium.By");
     
     }
     

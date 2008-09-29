@@ -44,14 +44,14 @@ such as commons-logging conflicts.
 --------------------------------------------------------------------------------
 Installation Version 1 Adobe ColdFusion: 
 
-1. Put all the jars from /lib into WEB-INF/lib/webdriver
+1. Copy /webdriverlib to WEB-INF/lib/webdriverlib
 2. Edit WEB-INF/web.xml adding the path to the webdriver jars above
 to the BEGINING of the cf.class.path element:  
 
 <context-param id="coldfusion_context_88">
     <param-name>cf.class.path</param-name>
     <param-value>
-     ./WEB-INF/lib/webdriver,./WEB-INF/cfusion/lib/updates,./WEB-INF/cfusion/lib,./WEB-INF/cfusion/gateway/lib,./WEB-INF/flex/jars,./WEB-INF/cfform/jars</param-value>
+     ./WEB-INF/lib/webdriverlib,./WEB-INF/cfusion/lib/updates,./WEB-INF/cfusion/lib,./WEB-INF/cfusion/gateway/lib,./WEB-INF/flex/jars,./WEB-INF/cfform/jars</param-value>
 </context-param>
 
 This is needed to make sure the commons logging classes are loaded first and
@@ -68,7 +68,7 @@ app or web testing ...
 
 Installation Version 2 Railo 3.00.003: 
 
-1. Put all the jars from /lib into {railo_install}/lib
+1. Put all the jars from /webdriverlib into {railo_install}/lib
 2. Restart Railo
 4. Try the tests in ClassDirLoading.cfc
 
