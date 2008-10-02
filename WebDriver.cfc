@@ -3,6 +3,8 @@
   WebDriver
   @author bill
   @description ColdFusion wrapper for webdriver (http://code.google.com/p/webdriver)
+  
+  @todo: lots - subclass driver types
 
 */
 
@@ -46,15 +48,20 @@
 	   }
 	
 	
+		
+	  function setDriver(driver){
+	   this.driver = driver;
+	   return this;
+	  }
 	
 	   function get(url) {
 	     this.driver.get(arguments.url);
 	   }  
 	
 	
-    function close() {
-      this.driver.close();
-    }
+	    function close() {
+	      this.driver.close();
+	    }
   
          
 		function executeScript() {
@@ -65,6 +72,14 @@
 		function findElement(by){
 		  var element = createObject("component","WebElement");
 		  this.webelement = this.driver.findElement(this.by.name(by));
+		  element.init(this.webelement);
+		  return element; 
+		} 
+		
+		
+		function findElementByLinkText(text){
+		  var element = createObject("component","WebElement");
+		  this.webelement = this.driver.findElementByLinkText(text);
 		  element.init(this.webelement);
 		  return element; 
 		} 
@@ -83,11 +98,6 @@
 		function getCurrentUrl() {
 		  return this.driver.getCurrentUrl();
 		} //java.lang.String 
-		
-		
-		function findElementByLinkText(linkText) {
-		  return this.driver.findElementByLinkText(linkText);
-		}  //)(java.lang.String) java.util.List 
 		
 		
 	    function isJavascriptEnabled(){
@@ -116,7 +126,12 @@
 			  elements.add(element);
 			}
 		  return elements; //array of WebElement objects
-		}  //)(java.lang.String) java.util.List
+		} 
+		
+		
+		function findElementByName(name) {
+			return this.driver.findElementByName(name);
+		} 
 		
 		
 		function findElementsByXPath(xpath) {
@@ -132,7 +147,11 @@
 		  return elements; //array of WebElement objects
 		} 
 		
-		//)(java.lang.String) java.util.List 
+		
+		function findElementByXPath(xpath) {
+		   return this.driver.findElementByXPath(xpath);
+		} 
+		
 		
 		function getVisible() {
 		  return this.driver.getVisible();
@@ -140,7 +159,6 @@
 		
 		
 		function setVisible(visible){
-			writeoutput(visible);
 		  this.driver.setVisible( javacast("boolean",visible) );
 		} //void 
 		
@@ -155,27 +173,43 @@
 		 this.driver.get(location);
 		} //org.openqa.selenium.WebDriver$Navigation 
 		
+		
 		//Not tested.
 		function setProxy(proxyUrl, port){
 		 this.driver.setProxy(proxyUrl, port);
 		} //void 
 		
 		
-		//To Do's ......................
-			
-		function findElements(by){
-		  
-		} // org.openqa.selenium.By :: org.openqa.selenium.WebElement
-				
-		function manage(){} //org.openqa.selenium.WebDriver$Options 
+		//uthenticateAs(String username, String password, String host, int port, String clientHost, String domain) 
+		function authenticateAs(username,password, host, port, clientHost, domain){
+		  this.driver.authenticateAs(username,password, host, port, clientHost, domain);
+		 }
 		
 		
 		function switchTo(){
-		  throwNotImplementedException("swicthTo()");
+		  return this.driver.switchTo();
 		} //org.openqa.selenium.WebDriver$TargetLocator 
 		
-
-
+		
+		//To Do: Move these to FireFox subclass
+		function setFireFoxPath(path){
+		  createObject("java","java.lang.System").setProperty("webdriver.firefox.bin", path);
+		}
+		
+		function setUseExistingFireFoxInstance(toggle){
+		  createObject("java","java.lang.System").setProperty("webdriver.firefox.useExisting", toggle);
+		}
+		
+		
+		//To Do's ......................
+		function findElements(by){  
+			throwNotImplementedException("findElements(by)");
+		} // org.openqa.selenium.By :: org.openqa.selenium.WebElement
+				
+		function manage(){
+		 throwNotImplementedException("manage");
+		} //org.openqa.selenium.WebDriver$Options 
+		
  
   </cfscript>
 

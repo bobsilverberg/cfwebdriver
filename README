@@ -1,4 +1,4 @@
-Last Updated: Friday, 09-26-2008
+Last Updated: Thursday, 10-02-2008
 
 Experimental Webdriver Binding/port for ColdFusion
 
@@ -9,10 +9,11 @@ Recommendations before starting:
 This setup is intended for individual developer use and not for a shared environment. 
 For the Firefox driver, Webdriver needs access to the APPDATA environment variable. 
 If the server is started under a local system account, this may not exist, and return 
-NULL. In this case, Firefox and likely IE will not run. The HtmlUnit
-driver still runs in this case. So, it's recommended that the developer
-be the account that started the cf server.
+NULL. In this case, Firefox and likely IE will not run. This issue has been fixed
+by Webdriver and should be available in the near future.
 
+The HtmlUnit driver still runs in this case. So, it's recommended that the developer
+be the account that started the cf server.
 
 Review the docs at http://code.google.com/p/webdriver for general information.
 
@@ -90,9 +91,11 @@ not support javascript well.
 
 Known Issues: Internet Explorer fails to load for unknown reasons. Methinks it
 might have something to do with how IE shuts down after an exception. It may
-still be running in the background.
+still be running in the background. New IE Webdrivers are on the way.
 
-FF also does not load "sometimes" ... Http authentication is not implemented. 
+FF also does not load "sometimes" ... 
+
+Http authentication is not implemented. 
 So, not BASIC or NTLM yet. Maybe extend the drivers or contribute to Webdriver
 the desired authenticateAs(...)
 

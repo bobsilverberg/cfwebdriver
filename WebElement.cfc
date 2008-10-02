@@ -7,12 +7,12 @@
    return this;
   }
     
-    //TO DO: Accept int as 2nd param, which indicates mouse and keyboard events - KEYPRESS.KEYDOWN ...
+  //TO DO: Accept int as 2nd param, which indicates mouse and keyboard events - KEYPRESS.KEYDOWN ...
   function sendKeys(keys){
-	  var localKeys = arrayNew(1);
-	  localKeys[1] = keys;
-	  this.webElement.sendKeys(localKeys);
-	} 
+	var localKeys = arrayNew(1);
+	localKeys[1] = keys.toString();
+	this.webElement.sendKeys(localKeys);
+  } 
     
   function submit() {
     this.webElement.submit();
@@ -60,7 +60,6 @@
 	function getChildrenOfType(strElement){} //}(java.lang.String) java.util.List 
 	function getLocation() {} //}ava.awt.Point 
 	function getSize() {} //}java.awt.Dimension 
-	
 	function getValue() {} //}java.lang.String 
 	function getValueOfCssProperty(css){} //}(java.lang.String) java.lang.String 
 	function isDisplayed() {} //}boolean 

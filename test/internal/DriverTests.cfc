@@ -35,16 +35,7 @@
 	   runDriver("ie");
     }  
     
-    function dump(){
-      by = createObject("java","org.openqa.selenium.By");
-      d = createObject("java","org.openqa.selenium.ie.InternetExplorerDriver").init();
-      d.get("http://google.com");
-      q = d.findElement( by.name("q"));
-      keys = arrayNew(1);
-	  keys[1] = "mxunit";
-      q.sendKeys(keys);
-      dump(q);
-    }
+   
     
     function setUp(){
      driver = createObject("component","cfwebdriver.WebDriver").newInstance("htmlunuit"); 
