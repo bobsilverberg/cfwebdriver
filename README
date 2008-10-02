@@ -61,7 +61,7 @@ or other apps. It might be best to create a new CF instance for this kind of
 app or web testing ...
 
 3. Restart CF.
-4. Try the tests in ClassDirLoading.cfc
+4. Try the tests example1.cfc and GoogleAjaxTest.cfc
 
 
 
@@ -71,7 +71,7 @@ Installation Version 2 Railo 3.00.003:
 
 1. Put all the jars from /webdriverlib into {railo_install}/lib
 2. Restart Railo
-4. Try the tests in ClassDirLoading.cfc
+4. Try the tests example1.cfc and GoogleAjaxTest.cfc
 
 
 --------------------------------------------------------------------------------
