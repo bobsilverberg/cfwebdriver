@@ -41,9 +41,14 @@
   */ 
     
    function setUp(){
-    driver = createObject("component","cfwebdriver.WebDriver").newInstance("ff");
-    driver.setFireFoxPath("C:/Programs/Mozilla Firefox/firefox.exe");
+    driver = createObject("component","cfwebdriver.WebDriver").newInstance("firefox");
+    
+    //Use below to specify an alternative location for Firefox:
+    //driver.setFireFoxPath("C:/Programs/Mozilla Firefox/firefox.exe");
+    
+    //Use an existing instance of Firefox if one is running
     driver.setUseExistingFireFoxInstance(true);
+    
     driver.get("http://www.google.com/uds/samples/apidocs/helloworld.html");
     search = driver.findElement("search");
     button = driver.findElementByXpath("/html/body/div/div/form/table/tbody/tr/td/input[@class='gsc-search-button']");
