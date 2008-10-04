@@ -31,8 +31,8 @@
     
     function setUp(){
       driver = createObject("java","org.openqa.selenium.htmlunit.HtmlUnitDriver");
-	  by = createObject("java","org.openqa.selenium.By");
-	  xml = fileRead(expandPath("/cfwebdriver/test/internal/test-config.xml"));
+	    by = createObject("java","org.openqa.selenium.By");
+	    xml = fileRead(expandPath("/cfwebdriver/test/internal/test-config.xml"));
       dom = xmlParse(xml);
       f1 = xmlSearch(dom,"/config/file[@name='mxunitblog']");
       f = f1[1].xmlAttributes.path;

@@ -33,12 +33,12 @@
   function _testXPathTester(){
    link = driver.findElementByXPath("id('searchcontrol')/div/div/div[4]/div[2]/div[1]/div/div[1]/a");
    debug(link.getText());
-   assertEquals("Paris 2008: 2009 Volkswagen GTI",link.getText());
+   assertEquals("2009 Volkswagen GTI - car and driver",link.getText());
   
   }
   /*
    @BeforeTest/@AfterTest
-  */ 
+  */  
     
    function setUp(){
     driver = createObject("component","cfwebdriver.WebDriver").newInstance("firefox");
@@ -47,7 +47,7 @@
     //driver.setFireFoxPath("C:/Programs/Mozilla Firefox/firefox.exe");
     
     //Use an existing instance of Firefox if one is running
-    driver.setUseExistingFireFoxInstance(true);
+    //driver.setUseExistingFireFoxInstance(true);
     
     driver.get("http://www.google.com/uds/samples/apidocs/helloworld.html");
     search = driver.findElement("search");

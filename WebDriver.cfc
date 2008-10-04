@@ -15,39 +15,53 @@
 	  this.by = createObject("java","org.openqa.selenium.By");
 	  this.driver = "";
 	  this.webelement = "";
+	  this.driverType = "";
+	  
+	  
 	
+	  //
 	  function newInstance(type){
 	     switch(type){
 	     
 	     case "ff" : {
-	       this.driver = createObject("java","org.openqa.selenium.firefox.FirefoxDriver");
-	       break;
+	      return createObject("component","FirefoxDriver").init();
+	      break;
 	     }
 	     
 	     case "firefox" : {
-	       this.driver = createObject("java","org.openqa.selenium.firefox.FirefoxDriver");
-	       break;
+	      return createObject("component","FirefoxDriver").init();
+	      break;
 	     }
 	          
 	     case "ie": {
-	       this.driver = createObject("java","org.openqa.selenium.ie.InternetExplorerDriver");
+	     	 return createObject("component","InternetExplorerDriver").init();
 	       break;
 	     }
 	     
 	     case "htmlunit": {
-	       this.driver = createObject("java","org.openqa.selenium.htmlunit.HtmlUnitDriver");
+	       return createObject("component","HtmlUnitDriver").init();
 	       break;
+	     }
+	     
+	     case "safari" : {
+	      return createObject("component","SafariDriver").init();
+	     }
+	     
+	     case "chrome" : {
+	      return createObject("component","ChromeDriver").init();
 	     }
 	     
 	     default :
-	       this.driver = createObject("java","org.openqa.selenium.htmlunit.HtmlUnitDriver");
+	       return createObject("component","HtmlUnitDriver").init();
 	       break;
 	     }
 	     
-	     return this;
 	   }
 	
 	
+	  function getType(){
+	    return this.driverType;
+	  }
 		
 	  function setDriver(driver){
 	   this.driver = driver;
@@ -100,15 +114,7 @@
 		} //java.lang.String 
 		
 		
-	    function isJavascriptEnabled(){
-	      return this.driver.isJavascriptEnabled();
-	    } // boolean 
-		
-		
-		function setJavascriptEnabled(enable){
-		  this.driver.setJavascriptEnabled(enable);
-		} //void 
-		
+	 
 		
 		function findElementsById(id) {
 		  return this.driver.findElementsById(id);
@@ -191,14 +197,7 @@
 		} //org.openqa.selenium.WebDriver$TargetLocator 
 		
 		
-		//To Do: Move these to FireFox subclass
-		function setFireFoxPath(path){
-		  createObject("java","java.lang.System").setProperty("webdriver.firefox.bin", path);
-		}
 		
-		function setUseExistingFireFoxInstance(toggle){
-		  createObject("java","java.lang.System").setProperty("webdriver.firefox.useExisting", toggle);
-		}
 		
 		
 		//To Do's ......................
