@@ -7,7 +7,10 @@
   
   <cfscript>
         
-   
+   function dumpDriver(){
+      debug(driver.driver);
+    }
+    
   function testGet() {
    driver = driver.newInstance("htmlunit");
    driver.get("http://google.com");
@@ -80,6 +83,13 @@
     driver.get(f);
     elements = driver.findElementsById("navbar-iframe");
     assertEquals(1,arrayLen(elements),"should be just one element returned");
+  }
+  
+   function testFindElementById() {
+    driver.get(f);
+    element = driver.findElementById("navbar-iframe");
+    debug(element);
+    //assertEquals(1,arrayLen(elements),"should be just one element returned");
   }
 
 

@@ -114,7 +114,9 @@
 		} //java.lang.String 
 		
 		
-	 
+	 function findElementById(id) {
+		  return this.driver.findElementById(id);
+		}  //)
 		
 		function findElementsById(id) {
 		  return this.driver.findElementsById(id);
