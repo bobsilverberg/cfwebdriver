@@ -4,7 +4,7 @@
   function testLogIntoNTLMRealm(){
     driver.addNTLMCredentials("","","",-1,"", "");
     driver.get("http://asd");
-    assertEquals("OTS Intranet", driver.getTitle());
+    assertEquals("Intranet", driver.getTitle());
   }
     
    
