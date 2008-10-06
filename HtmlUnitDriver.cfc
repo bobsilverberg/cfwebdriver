@@ -19,19 +19,25 @@
 	 } // boolean 
 		
 		
-		function setJavascriptEnabled(enable){
-		  this.driver.setJavascriptEnabled(enable);
-		} //void 
+	function setJavascriptEnabled(enable){
+	  this.driver.setJavascriptEnabled(enable);
+	} //void 
+	
+	
+	function authenticate(username, password, domain){
+	  //To Do: NTLM Credentials ... more params, or separate method?
+	  getWebClient().getCredentialsProvider().addCredentials(username,password); 
+	}
+	
+
+	function addNTLMCredentials(username, password, host, port, clientHot, domain){
+	  //To Do: NTLM Credentials ... more params, or separate method?
+	  getWebClient().getCredentialsProvider().addNTLMCredentials(username, password, host, port, clientHot, domain); 
+	}
 		
 		
-		function authenticate(username, password, domain){
-		  //To Do: NTLM Credentials ... more params, or separate method?
-		  getWebClient().getCredentialsProvider().addCredentials(username,password); 
-		}
 		
-		
-		
-		function getWebClient(){
+	function getWebClient(){
       var getWebClientMethod = this.driver.getClass().getDeclaredMethod("getWebClient",arrayNew(1));
       var params = arrayNew(1); 
       getWebClientMethod.setAccessible(true);

@@ -68,10 +68,12 @@
 	   return this;
 	  }
 	
-	   function get(url) {
-	     this.driver.get(arguments.url);
-	   }  
 	
+	  function get(url) {
+	     this.driver.get(arguments.url);
+	  }  
+	
+
 	
 	    function close() {
 	      this.driver.close();
@@ -84,11 +86,31 @@
 		
 		 
 		function findElement(by){
+		  /*
 		  var element = createObject("component","WebElement");
 		  this.webelement = this.driver.findElement(this.by.name(by));
 		  element.init(this.webelement);
-		  return element; 
-		} 
+		  return element;
+		  */
+		  
+		   try{ 
+		 	return findElementById(by); 
+		   }catch(org.openqa.selenium.NoSuchElementException ex){}
+			
+		   try{ 
+			 return findElementByName(by); 
+		   }catch(org.openqa.selenium.NoSuchElementException ex){}
+			 
+		   try{ 
+			 return findElementByXpath(by); 
+			}catch(org.openqa.selenium.NoSuchElementException ex){}
+			 
+		   try{ 
+			 return findElementByLinkText(by); 
+			}catch(org.openqa.selenium.NoSuchElementException ex){} 
+			 
+			 return ""; //return empty string, mo exception 
+			} 
 		
 		
 		function findElementByLinkText(text){
@@ -97,6 +119,7 @@
 		  element.init(this.webelement);
 		  return element; 
 		} 
+		
 		
 		
 		function getTitle() {
@@ -114,7 +137,7 @@
 		} //java.lang.String 
 		
 		
-	 function findElementById(id) {
+	   function findElementById(id) {
 		  return this.driver.findElementById(id);
 		}  //)
 		
@@ -122,6 +145,11 @@
 		  return this.driver.findElementsById(id);
 		}  //)(java.lang.String) java.util.List 
 		
+		
+	   function findElements(by){
+	     //to do: returns an array of element objects
+	     // by name, xpath, etc...
+	   }
 		
 		
 		function findElementsByName(name) {
@@ -188,7 +216,7 @@
 		} //void 
 		
 		
-		//uthenticateAs(String username, String password, String host, int port, String clientHost, String domain) 
+		//authenticateAs(String username, String password, String host, int port, String clientHost, String domain) 
 		function authenticateAs(username,password, host, port, clientHost, domain){
 		  this.driver.authenticateAs(username,password, host, port, clientHost, domain);
 		 }

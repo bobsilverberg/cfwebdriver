@@ -1,6 +1,9 @@
 <cfcomponent output="false" extends="BaseWebDriverTests">
     <cfscript>
 
+
+
+  
   //getWebClient()
   function testAuthenticate(){
     driver.authenticate("foo","bar","mydomain");
