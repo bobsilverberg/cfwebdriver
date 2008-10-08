@@ -2,6 +2,7 @@
   <cfscript>  
   function doGoogleSearch(){
     driver = createObject("component","cfwebdriver.WebDriver").newInstance("firefox");
+    driver.setFirefoxPath("C:/Programs/Mozilla Firefox/firefox.exe");
     driver.get("http://google.com");
     q = driver.findElement("q");
     q.sendKeys("mxunit");

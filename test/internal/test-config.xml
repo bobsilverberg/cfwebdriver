@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
- <file name="mxunitblog" path="file:///home/billy/webapps/cfwebdriver/test/fixture/MXUnitBlog.html" />
+ <file name="mxunitblog" path="file:///C:/JRun4/servers/dev/cfusion.ear/cfusion.war/cfwebdriver/test/fixture/MXUnitBlog.html" />
 </config>

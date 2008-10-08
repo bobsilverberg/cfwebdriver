@@ -14,6 +14,8 @@
     }
     
     
+    
+    
    function isJavascriptEnabled(){
 	   return this.driver.isJavascriptEnabled();
 	 } // boolean 

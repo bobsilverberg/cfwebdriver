@@ -107,11 +107,11 @@
 			 
 		   try{ 
 			 return findElementByLinkText(by); 
-			}catch(org.openqa.selenium.NoSuchElementException ex){} 
+		   }catch(org.openqa.selenium.NoSuchElementException ex){} 
 			 
-			 return ""; //return empty string, mo exception 
-			} 
-		
+		  return ""; //return empty string, if it's not there - no exceptions for now
+		} 
+	
 		
 		function findElementByLinkText(text){
 		  var element = createObject("component","WebElement");
@@ -137,12 +137,26 @@
 		} //java.lang.String 
 		
 		
+	   function findElementByName(name) {
+			var element = this.driver.findElement(this.by.name(name));
+			return createObject("component","WebElement").init(element);
+		} 
+	   
 	   function findElementById(id) {
-		  return this.driver.findElementById(id);
+		 var element = this.driver.findElement(this.by.id(id));
+			return createObject("component","WebElement").init(element);
 		}  //)
 		
 		function findElementsById(id) {
-		  return this.driver.findElementsById(id);
+		   var elements = arrayNew(1);
+		   var element = "";
+		   var i = 1;
+		   var webelements = this.driver.findElementsById(id);
+		   for(i = 1; i lte arrayLen(webelements); i = i +1){
+			  element = createObject("component","WebElement").init(webelements[i]);
+			  elements.add(element);
+			}
+		  return elements; //array of WebElement objects
 		}  //)(java.lang.String) java.util.List 
 		
 		
@@ -165,9 +179,7 @@
 		} 
 		
 		
-		function findElementByName(name) {
-			return this.driver.findElementByName(name);
-		} 
+		
 		
 		
 		function findElementsByXPath(xpath) {
@@ -185,7 +197,8 @@
 		
 		
 		function findElementByXPath(xpath) {
-		   return this.driver.findElementByXPath(xpath);
+		   var element = this.driver.findElementByXPath(xpath);
+		   return createObject("component","WebElement").init(element);
 		} 
 		
 		
@@ -228,12 +241,10 @@
 		
 		
 		
-		
+	   
 		
 		//To Do's ......................
-		function findElements(by){  
-			throwNotImplementedException("findElements(by)");
-		} // org.openqa.selenium.By :: org.openqa.selenium.WebElement
+		
 				
 		function manage(){
 		 throwNotImplementedException("manage");
@@ -250,6 +261,13 @@
             detail="Method name: #arguments.methodName#">
  </cffunction>
 
-
+ <cffunction name="throwException">
+   <cfargument name="type" />
+   <cfargument name="message" />
+   <cfargument name="detail" />
+   <cfthrow type="#arguments.type#" 
+            message="#arguments.message#" 
+            detail="#arguments.detail#">
+ </cffunction>
 	
 </cfcomponent>
